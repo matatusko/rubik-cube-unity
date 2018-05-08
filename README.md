@@ -21,7 +21,8 @@ Thanks!
 Here are some screenshots from the game, in case you are curious how it looks like:
 (Screenshots also available at the google play store listed above)
 
-<img src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/01.jpg" width="60%" height="60%">
-<img src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/02.jpg" width="60%" height="60%">
-<img src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/03.jpg" width="60%" height="60%">
-<img src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/04.jpg" width="60%" height="60%">
+  <img align="left" src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/01.jpg" width="40%" height="40%" hspace="20">
+  <img align="left" src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/02.jpg" width="40%" height="40%" hspace="20">
+
+  <img align="left" src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/03.jpg" width="40%" height="40%" hspace="20">
+  <img align="left" src="https://github.com/matatusko/rubik-cube-unity/blob/master/screenshots/04.jpg" width="40%" height="40%" hspace="20">
