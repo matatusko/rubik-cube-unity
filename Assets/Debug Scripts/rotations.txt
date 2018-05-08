@@ -1,0 +1,129 @@
+private SmallCube[,,] ResetLocationAfterColumnRotation(float angle, int column) {
+      SmallCube[,,] newSmallCubes = new SmallCube[cubeSize, cubeSize, cubeSize];
+      for (int z = 0; z < cubeSize; z++) {
+         for (int y = 0; y < cubeSize; y++) {
+            for (int x = 0; x < cubeSize; x++) {
+               newSmallCubes[x, y, z] = smallCubes[x, y, z];
+            }
+         }
+      }
+      
+      if (angle > 0) {
+         for (int x = 0, x2 = cubeSize - 1; x < cubeSize; x++, x2--) {
+            newSmallCubes[column, x2, cubeSize - 1] = smallCubes[column, cubeSize - 1, x];
+            newSmallCubes[column, cubeSize - 1, x2] = smallCubes[column, x2, 0];
+            newSmallCubes[column, x2, 0] = smallCubes[column, 0, x];
+            newSmallCubes[column, 0, x] = smallCubes[column, x, cubeSize - 1];
+         }
+         /*
+         newSmallCubes[column, 2, 2] = smallCubes[column, 2, 0];
+         newSmallCubes[column, 1, 2] = smallCubes[column, 2, 1];
+         newSmallCubes[column, 0, 2] = smallCubes[column, 2, 2];
+
+         newSmallCubes[column, 2, 2] = smallCubes[column, 2, 0];
+         newSmallCubes[column, 2, 1] = smallCubes[column, 1, 0];
+         newSmallCubes[column, 2, 0] = smallCubes[column, 0, 0];
+
+         newSmallCubes[column, 2, 0] = smallCubes[column, 0, 0];
+         newSmallCubes[column, 1, 0] = smallCubes[column, 0, 1];
+         newSmallCubes[column, 0, 0] = smallCubes[column, 0, 2];
+
+         newSmallCubes[column, 0, 0] = smallCubes[column, 0, 2];
+         newSmallCubes[column, 0, 1] = smallCubes[column, 1, 2];
+         newSmallCubes[column, 0, 2] = smallCubes[column, 2, 2];
+         */
+      }
+      else {
+         for (int x = 0, x2 = cubeSize - 1; x < cubeSize; x++, x2--) {
+            newSmallCubes[column, x, 0] = smallCubes[column, cubeSize - 1, x];
+            newSmallCubes[column, 0, x] = smallCubes[column, x2, 0];
+            newSmallCubes[column, x, cubeSize - 1] = smallCubes[column, 0, x];
+            newSmallCubes[column, cubeSize - 1, x2] = smallCubes[column, x, cubeSize - 1];
+         }
+         /*
+         newSmallCubes[column, 0, 0] = smallCubes[column, 2, 0];
+         newSmallCubes[column, 1, 0] = smallCubes[column, 2, 1];
+         newSmallCubes[column, 2, 0] = smallCubes[column, 2, 2];
+
+         newSmallCubes[column, 0, 0] = smallCubes[column, 2, 0];
+         newSmallCubes[column, 0, 1] = smallCubes[column, 1, 0];
+         newSmallCubes[column, 0, 2] = smallCubes[column, 0, 0];
+
+         newSmallCubes[column, 0, 2] = smallCubes[column, 0, 0];
+         newSmallCubes[column, 1, 2] = smallCubes[column, 0, 1];
+         newSmallCubes[column, 2, 2] = smallCubes[column, 0, 2];
+
+         newSmallCubes[column, 2, 2] = smallCubes[column, 0, 2];
+         newSmallCubes[column, 2, 1] = smallCubes[column, 1, 2];
+         newSmallCubes[column, 2, 0] = smallCubes[column, 2, 2];
+         */
+      }
+
+      return newSmallCubes;
+   }
+
+
+   private SmallCube[,,] ResetLocationAfterRowRotation(float angle, int row) {
+      SmallCube[,,] newSmallCubes = new SmallCube[cubeSize, cubeSize, cubeSize];
+      for (int z = 0; z < cubeSize; z++) {
+         for (int y = 0; y < cubeSize; y++) {
+            for (int x = 0; x < cubeSize; x++) {
+               newSmallCubes[x, y, z] = smallCubes[x, y, z];
+            }
+         }
+      }
+      if (angle > 0) {
+         for (int x = 0, x2 = cubeSize - 1; x < cubeSize; x++, x2--) {
+            newSmallCubes[x, row, 0] = smallCubes[cubeSize - 1, row, x];
+            newSmallCubes[0, row, x] = smallCubes[x2, row, 0];
+            newSmallCubes[x, row, cubeSize - 1] = smallCubes[0, row, x];
+            newSmallCubes[cubeSize - 1, row, x2] = smallCubes[x, row, cubeSize - 1];
+         }
+
+         /*
+         newSmallCubes[0, row, 0] = smallCubes[2, row, 0];
+         newSmallCubes[1, row, 0] = smallCubes[2, row, 1];
+         newSmallCubes[2, row, 0] = smallCubes[2, row, 2];
+
+         newSmallCubes[0, row, 0] = smallCubes[2, row, 0];
+         newSmallCubes[0, row, 1] = smallCubes[1, row, 0];
+         newSmallCubes[0, row, 2] = smallCubes[0, row, 0];
+
+         newSmallCubes[0, row, 2] = smallCubes[0, row, 0];
+         newSmallCubes[1, row, 2] = smallCubes[0, row, 1];
+         newSmallCubes[2, row, 2] = smallCubes[0, row, 2];
+
+         newSmallCubes[2, row, 2] = smallCubes[0, row, 2];
+         newSmallCubes[2, row, 1] = smallCubes[1, row, 2];
+         newSmallCubes[2, row, 0] = smallCubes[2, row, 2];
+         */
+      }
+      else {
+         for (int x = 0, x2 = cubeSize - 1; x < cubeSize; x++, x2--) {
+            newSmallCubes[x2, row, cubeSize - 1] = smallCubes[cubeSize - 1, row, x];
+            newSmallCubes[cubeSize - 1, row, x2] = smallCubes[x2, row, 0];
+            newSmallCubes[x2, row, 0] = smallCubes[0, row, x];
+            newSmallCubes[0, row, x] = smallCubes[x, row, cubeSize - 1];
+         }
+
+         /*
+         newSmallCubes[2, row, 2] = smallCubes[2, row, 0];
+         newSmallCubes[1, row, 2] = smallCubes[2, row, 1];
+         newSmallCubes[0, row, 2] = smallCubes[2, row, 2];
+
+         newSmallCubes[2, row, 2] = smallCubes[2, row, 0];
+         newSmallCubes[2, row, 1] = smallCubes[1, row, 0];
+         newSmallCubes[2, row, 0] = smallCubes[0, row, 0];
+
+         newSmallCubes[2, row, 0] = smallCubes[0, row, 0];
+         newSmallCubes[1, row, 0] = smallCubes[0, row, 1];
+         newSmallCubes[0, row, 0] = smallCubes[0, row, 2];
+
+         newSmallCubes[0, row, 0] = smallCubes[0, row, 2];
+         newSmallCubes[0, row, 1] = smallCubes[1, row, 2];
+         newSmallCubes[0, row, 2] = smallCubes[2, row, 2];
+         */
+      }
+
+      return newSmallCubes;
+   }

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rubik2 - Copy - Copy", "Rubik2 - Copy - Copy.csproj", "{4B8FE3F5-C814-8D98-C9B2-1050AA01B33B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B8FE3F5-C814-8D98-C9B2-1050AA01B33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8FE3F5-C814-8D98-C9B2-1050AA01B33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8FE3F5-C814-8D98-C9B2-1050AA01B33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8FE3F5-C814-8D98-C9B2-1050AA01B33B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
